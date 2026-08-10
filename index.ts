@@ -1,4 +1,4 @@
-let x: string | number = 'hi';
+let x: string | number = 'learn';
 
 // need to check type before use (same idea as unknown)
 if (typeof x === "string") {
