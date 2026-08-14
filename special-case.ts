@@ -37,3 +37,15 @@ type Permissions = Record<Role, boolean>; // { admin: boolean, user: boolean } =
 type PermissionMap = {
   [key: string]: boolean; // or boolean | string
 }; // right side is only have exact type or union type, if add one type make error right away
+
+type A =
+  | { type: "user"; name: string }
+  | { type: "admin"; permissions: string[] }; // union between literal values, type union can be between abstract or literal
+
+type Config = {
+  theme: "dark" | "light";
+};
+
+const config = {
+  theme: "dark"
+} satisfies Config; // satisfies but keep own type, hover see theme is "dark", not "dark" | "light"
