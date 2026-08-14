@@ -19,3 +19,21 @@ type J = Parameters<Fn>
 
 type K = ReturnType<Fn>
 // boolean => depends on return type in Fn
+
+interface A {
+  name: string;
+}
+
+type B = {
+  age: number;
+};
+
+type C = A | B; // union can between type - type / interface - interface / type - interface => only left side must be type
+
+type Role = "admin" | "user";
+
+type Permissions = Record<Role, boolean>; // { admin: boolean, user: boolean } => required both
+
+type PermissionMap = {
+  [key: string]: boolean; // or boolean | string
+}; // right side is only have exact type or union type, if add one type make error right away
