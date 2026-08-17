@@ -43,7 +43,7 @@ type A =
   | { type: "admin"; permissions: string[] }; // union between literal values, type union can be between abstract or literal
 
 type Config = {
-  theme: "dark" | "light";
+  theme: "dark" | "light" | "default";
 };
 
 const config = {
